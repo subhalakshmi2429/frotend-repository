@@ -6,9 +6,12 @@ function App() {
   const [postMessage, setPostMessage] = useState('backend is working'); // default message
   const [postResponse, setPostResponse] = useState('');
 
+  // ✅ Replace with your actual load balancer URL
+  const backendUrl = 'http://ecs-loadbalancer-1036687051.ap-south-1.elb.amazonaws.com';
+
   const handleGet = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/get?name=${getName}`);
+      const response = await fetch(`${backendUrl}/get?name=${getName}`);
       const data = await response.json();
       setGetResponse(data.message);
     } catch (error) {
@@ -18,7 +21,7 @@ function App() {
 
   const handlePost = async () => {
     try {
-      const response = await fetch('http://localhost:5000/submit', {
+      const response = await fetch(`${backendUrl}/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: postMessage }),
