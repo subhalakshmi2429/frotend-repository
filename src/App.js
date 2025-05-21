@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
 function App() {
-  const [getName, setGetName] = useState('subha'); // default name
+  const [getName, setGetName] = useState('subha');
   const [getResponse, setGetResponse] = useState('');
-  const [postMessage, setPostMessage] = useState('backend is working'); // default message
+  const [postMessage, setPostMessage] = useState('backend is working');
   const [postResponse, setPostResponse] = useState('');
 
-  // ✅ Replace with your actual load balancer URL
-  const backendUrl = 'ALB-1471335983.ap-south-1.elb.amazonaws.com';
+  const backendUrl = 'https://ALB-1471335983.ap-south-1.elb.amazonaws.com'; // Make sure this uses http:// or https://
 
   const handleGet = async () => {
     try {
@@ -36,7 +35,9 @@ function App() {
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial' }}>
       <h2>🔍 GET Method (Query by Name)</h2>
+      <label htmlFor="getNameInput">Enter your name:</label>
       <input
+        id="getNameInput"
         type="text"
         placeholder="Enter your name"
         value={getName}
@@ -48,7 +49,9 @@ function App() {
       <hr />
 
       <h2>📩 POST Method (Send Message)</h2>
+      <label htmlFor="postMessageInput">Enter a message:</label>
       <input
+        id="postMessageInput"
         type="text"
         placeholder="Enter a message"
         value={postMessage}
