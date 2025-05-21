@@ -6,7 +6,7 @@ function App() {
   const [postMessage, setPostMessage] = useState('backend is working');
   const [postResponse, setPostResponse] = useState('');
 
-  const backendUrl = 'https://ALB-1471335983.ap-south-1.elb.amazonaws.com'; // Make sure this uses http:// or https://
+  const backendUrl = 'https://suba.wwwdkt.com'; // Make sure this uses http:// or https://
 
   const handleGet = async () => {
     try {
