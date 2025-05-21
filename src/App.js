@@ -7,7 +7,7 @@ function App() {
   const [postResponse, setPostResponse] = useState('');
 
   // ✅ Replace with your actual load balancer URL
-  const backendUrl = 'http://ecs-loadbalancer-1036687051.ap-south-1.elb.amazonaws.com';
+  const backendUrl = 'ALB-1471335983.ap-south-1.elb.amazonaws.com';
 
   const handleGet = async () => {
     try {
